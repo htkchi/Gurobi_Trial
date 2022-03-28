@@ -1,0 +1,41 @@
+Problem 1:
+# Solve the following MIP:
+#  maximize
+#        x +   y + 2 z
+#  subject to
+#        x + 2 y + 3 z <= 4
+#        x +   y       >= 1
+#        x, y, z binary
+
+Solution:
+Optimal objective value: 3.0
+Solution values: x=1.0, y=0.0, z=1.0
+
+====================================
+Problem 2:
+# Solve the following MIP:
+#  maximize
+#        x +   5y + 2 z
+#  subject to
+#        x + 2 y + 3 z <= 4
+#        x +   y       >= 1/2
+#        x, y, z binary
+
+Solution:
+Optimal objective value: 6.0
+Solution values: x=1.0, y=1.0, z=0.0
+
+====================================
+Problem 2.2:
+# Solve the following MIP:
+#  maximize
+#        x +   5y + 2 z
+#  subject to
+#        x + 2 y + 3 z <= 4
+#        x +   y       >= 1/2
+#        x +   y       <= 1
+#        x, y, z binary
+
+Solution:
+Optimal objective value: 5.0
+Solution values: x=0.0, y=1.0, z=0.0

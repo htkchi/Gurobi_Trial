@@ -1,0 +1,153 @@
+PROBLEM 1: OPTIMIZED
+# Solve the following IP:
+#  maximize
+#        16 * x1 + 22 * x2 + 12 * x3 + 8 * x4 + 11 * x5 + 19 * x6
+#  subject to
+#        5 * x1 + 7 * x2 + 4 * x3 + 3 * x4 + 4 * x5 + 6 * x6 <= 14
+#        xj binary, j=1,2,...,5,6
+
+Statistics:
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 1 rows, 6 columns and 6 nonzeros
+Variable types: 0 continuous, 6 integer (6 binary)
+Coefficient statistics:
+  Matrix range     [3e+00, 7e+00]
+  Objective range  [8e+00, 2e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+01, 1e+01]
+Found heuristic solution: objective 38.0000000
+Presolve removed 1 rows and 6 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 4 available processors)
+Solution count 2: 43 38
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.300000000000e+01, best bound 4.300000000000e+01, gap 0.0000%
+
+Solution:
+Optimal objective value: 43.0
+Solution values: x1=1.0, x2=0.0, x3=0.0,x4=1.0, x5=0.0, x6=1.0,
+
+====================================
+PROBLEM 2: RELAXED
+# Solve the following IP:
+#  maximize
+#        16 * x1 + 22 * x2 + 12 * x3 + 8 * x4 + 11 * x5 + 19 * x6
+#  subject to
+#        5 * x1 + 7 * x2 + 4 * x3 + 3 * x4 + 4 * x5 + 6 * x6 <= 14
+#        0 <= xj <= 1, j=1,2,...,5,6
+
+Statistics:
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 13 rows, 6 columns and 18 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 7e+00]
+  Objective range  [8e+00, 2e+01]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [1e+00, 1e+01]
+Presolve removed 13 rows and 6 columns
+Presolve time: 0.01s
+Presolve: All rows and columns removed
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    4.4428571e+01   0.000000e+00   0.000000e+00      0s
+Solved in 0 iterations and 0.01 seconds
+Optimal objective  4.442857143e+01
+
+Solution:
+Optimal objective value: 44.42857142857143
+Solution values: x1=1.0, x2=0.42857142857142855, x3=0.0,x4=0.0, x5=0.0, x6=1.0,
+
+====================================
+PROBLEM 3: RELAXED, ADD 1ST CUT
+# Solve the following IP:
+#  maximize
+#        16 * x1 + 22 * x2 + 12 * x3 + 8 * x4 + 11 * x5 + 19 * x6
+#  subject to
+#        5 * x1 + 7 * x2 + 4 * x3 + 3 * x4 + 4 * x5 + 6 * x6 <= 14
+#        x1 + x2 + x6 <= 2
+#        0 <= xj <= 1, j=1,2,...,5,6
+
+Statistics:
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Coefficient statistics:
+  Matrix range     [1e+00, 7e+00]
+  Objective range  [8e+00, 2e+01]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [1e+00, 1e+01]
+Presolve removed 12 rows and 0 columns
+Presolve time: 0.00s
+Presolved: 2 rows, 6 columns, 9 nonzeros
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    4.4800000e+01   2.600000e+00   0.000000e+00      0s
+       2    4.4000000e+01   0.000000e+00   0.000000e+00      0s
+Solved in 2 iterations and 0.01 seconds
+
+Solution:
+Optimal objective value: 44.0
+Solution values: x1=1.0, x2=1.0, x3=0.5,x4=0.0, x5=0.0, x6=0.0,
+(x1 = 0, x2 = 1, x3 = ¼, x4 = 0, x5 = 0, x6 = 1)
+====================================
+PROBLEM 4: RELAXED, ADD 2ND CUTS
+# Solve the following IP:
+#  maximize
+#        16 * x1 + 22 * x2 + 12 * x3 + 8 * x4 + 11 * x5 + 19 * x6
+#  subject to
+#        5 * x1 + 7 * x2 + 4 * x3 + 3 * x4 + 4 * x5 + 6 * x6 <= 14
+#        x1 + x2 + x6 <= 2
+#        x1 + x2 + x3 <= 2
+#        0 <= xj <= 1, j=1,2,...,5,6
+
+Statistics:
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 15 rows, 6 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 7e+00]
+  Objective range  [8e+00, 2e+01]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [1e+00, 1e+01]
+Presolve removed 12 rows and 0 columns
+Presolve time: 0.00s
+Presolved: 3 rows, 6 columns, 12 nonzeros
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    4.4800000e+01   3.400000e+00   0.000000e+00      0s
+       3    4.4000000e+01   0.000000e+00   0.000000e+00      0s
+Solved in 3 iterations and 0.01 seconds
+Optimal objective  4.400000000e+01
+
+Solution:
+Optimal objective value: 44.0
+Solution values: x1=1.0, x2=0.33333333333333337, x3=0.6666666666666666,x4=0.0, x5=0.0, x6=0.6666666666666666,
+
+====================================
+PROBLEM 5: RELAXED, ADD 3RD CUTS
+# Solve the following IP:
+#  maximize
+#        16 * x1 + 22 * x2 + 12 * x3 + 8 * x4 + 11 * x5 + 19 * x6
+#  subject to
+#        5 * x1 + 7 * x2 + 4 * x3 + 3 * x4 + 4 * x5 + 6 * x6 <= 14
+#        x1 + x2 + x6 <= 2
+#        x1 + x2 + x3 <= 2
+#        x1 + x2 + x3 + x6 <= 2
+#        0 <= xj <= 1, j=1,2,...,5,6
+
+Statistics:
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 16 rows, 6 columns and 28 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 7e+00]
+  Objective range  [8e+00, 2e+01]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [1e+00, 1e+01]
+Presolve removed 12 rows and 0 columns
+Presolve time: 0.00s
+Presolved: 4 rows, 6 columns, 16 nonzeros
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    4.4800000e+01   4.200000e+00   0.000000e+00      0s
+       6    4.3750000e+01   0.000000e+00   0.000000e+00      0s
+Solved in 6 iterations and 0.01 seconds
+Optimal objective  4.375000000e+01
+
+Solution:
+Optimal objective value: 43.75
+Solution values: x1=0.0, x2=1.0, x3=0.0,x4=0.0, x5=0.25, x6=1.0,
